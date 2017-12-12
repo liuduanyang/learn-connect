@@ -176,18 +176,16 @@ connect源码可分为六部分
       		return next(err);
     	}
 
-    // skip if route match does not border "/", ".", or end
+    // url处理
     	var c = path.length > route.length && path[route.length];
     	if (c && c !== '/' && c !== '.') {
       		return next(err);
     	}
 
-    // trim off the part of the url that matches the route
     	if (route.length !== 0 && route !== '/') {
       		removed = route;
       		req.url = protohost + req.url.substr(protohost.length + removed.length);
 
-      // ensure leading slash
       	if (!protohost && req.url[0] !== '/') {
         	req.url = '/' + req.url;
         	slashAdded = true;
