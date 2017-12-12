@@ -52,10 +52,6 @@ $ npm install connect
 
 ### 处理中间件
 
-The core of Connect is "using" middleware. Middleware are added as a "stack"
-where incoming requests will execute each middleware one-by-one until a middleware
-does not call `next()` within it.
-
 Connect的核心是处理中间件，中间件被添加到"stack"变量(一个数组，用来存放中间件)中，请求将会依次对"stack"中存放的每一个中间件进行匹配，直到某一个中间件函数不再调用`next()`。
 
 
