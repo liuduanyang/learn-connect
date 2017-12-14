@@ -151,10 +151,10 @@ Connect API是非常精简的，足够创建一个app和一组中间件了。
 
 当`connect`模块被声明时，会返回一个函数，当这个函数被调用时将会创建一个新的app对象。
 
-	// require module
+	// 请求 connect 模块
 	var connect = require('connect')
 
-	// create app
+	// 创建 app
 	var app = connect()
 
 ### app(req, res[, next])
@@ -176,9 +176,9 @@ Connect API是非常精简的，足够创建一个app和一组中间件了。
 use是app上的一个方法，默认路由为'/'。它允许一个函数作为参数，这个函数就是一个中间件。中间件将会有序的被`app.use`调用，这个中间件函数允许接收三个参数:
 
 	app.use(function (req, res, next) {
-  	  // req is the Node.js http request object
-  	  // res is the Node.js http response object
-  	  // next is a function to call to invoke the next middleware
+	  // req 是 Node.js http request 对象
+	  // res 是 Node.js http response 对象
+	  // next 是用来调用下一个中间件的函数
 	})
 
 作为参数的函数也可以是一个http服务，也可以是另一个app。
@@ -188,9 +188,9 @@ use是app上的一个方法，默认路由为'/'。它允许一个函数作为�
 use是app上的一个方法，他接收一个路径字符串作为参数，它允许一个函数作为参数，这个作为参数的函数可以接收三个参数。有序的被'app.use'调用。
 
 	app.use('/foo', function (req, res, next) {
-	  // req is the Node.js http request object
-	  // res is the Node.js http response object
-	  // next is a function to call to invoke the next middleware
+	  // req 是 Node.js http request 对象
+	  // res 是 Node.js http response 对象
+	  // next 是用来调用下一个中间件的函数
 	})
 
 ## Running Tests
